@@ -1,0 +1,654 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Tech Hub - Updated</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- Bootstrap 5 -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <style>
+
+    /*ebf0f3*/
+    :root{
+      --bg: #dfdfdf; 
+      --card: #ffffff;
+      --muted: #7a8490;
+      --accent: #2fd1c7;
+      --dark: #0f1724;
+    }
+    html,body{
+      margin:0;
+      padding:0;
+      font-family:'Inter',system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--dark);
+    }
+
+    /* Header */
+    header.topbar{
+      background:#ffffff;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 48px;
+      border-bottom:1px solid rgba(15,25,35,0.08);
+      box-shadow:0 2px 10px rgba(0,0,0,0.03);
+      position:sticky;
+      top:0;
+      z-index:100;
+    }
+    .logo{display:flex;align-items:center;gap:12px;}
+    .logo .mark{
+      width:42px;height:42px;border-radius:10px;
+      background:linear-gradient(135deg,#22c1c3,#5eead4);
+      display:flex;align-items:center;justify-content:center;
+      color:#fff;font-weight:800;font-size:20px;
+    }
+    nav.main-nav a{
+      color:#374151;margin:0 12px;font-weight:600;text-decoration:none;font-size:15px;
+    }
+    nav.main-nav a:hover{color:var(--accent);}
+
+    /* Hero Section */
+    .hero{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      padding:60px 8vw 40px;
+      background:linear-gradient(180deg,#f8fafc,#f1f5f9);
+    }
+    .hero h1{
+      font-size:2rem;
+      font-weight:800;
+      margin-bottom:12px;
+    }
+    .hero p{
+      font-size:1rem;
+      color:var(--muted);
+      max-width:460px;
+    }
+    .btn-accent{
+      background:linear-gradient(90deg,#21c6be,#10a7ff);
+      color:#fff;border:none;border-radius:10px;
+      padding:10px 22px;font-weight:700;margin-top:18px;
+      box-shadow:0 8px 24px rgba(16,96,255,0.12);
+    }
+    .hero .imgbox{
+      flex:1 1 380px;
+      display:flex;align-items:center;justify-content:center;
+      margin-top:20px;
+    }
+    .hero img{
+      width:100%;max-width:400px;border-radius:16px;
+      box-shadow:0 10px 28px rgba(16,24,40,0.1);
+      object-fit:cover;
+    }
+
+    /* Section Spacing */
+    section{padding:50px 8vw;}
+
+    /* Quick Tools */
+    .card-quick{
+      border-radius:12px;padding:22px;background:var(--card);
+      box-shadow:0 10px 22px rgba(11,18,30,0.06);
+      border:1px solid rgba(12,20,28,0.04);
+      transition:transform .2s;
+      display:flex;flex-direction:column;align-items:center;text-align:center;
+    }
+    .card-quick:hover{transform:translateY(-3px);}
+    .card-quick img{
+      width:70px;height:70px;object-fit:cover;border-radius:10px;margin-bottom:12px;
+      box-shadow:0 4px 12px rgba(0,0,0,0.1);
+    }
+    .card-quick .title{font-weight:700;margin-bottom:6px;}
+    .card-quick p{margin:0;color:var(--muted);font-size:14px;}
+
+    /* Explore */
+    .big-card{
+      background:linear-gradient(180deg,#1e293b,#0f1724);
+      color:#fff;border-radius:12px;padding:24px;height:160px;
+      display:flex;flex-direction:column;justify-content:center;
+    }
+    .tile{
+      border-radius:12px;padding:16px;background:var(--card);
+      box-shadow:0 8px 20px rgba(11,18,30,0.04);
+      border:1px solid rgba(12,20,28,0.03);
+      transition:transform .2s;
+    }
+    .tile:hover{transform:translateY(-3px);}
+
+    footer{
+      background:#f7f9fb;padding:18px 8vw;border-top:1px solid rgba(15,25,35,0.05);
+      font-size:14px;color:var(--muted);
+    }
+
+    @media(max-width:991px){
+      .hero{padding:50px 6vw 30px;flex-direction:column;text-align:center;}
+      .hero img{max-width:85%;}
+    }
+
+    .logo {
+    width: 45px;
+    height: 45px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #22c1c3, #5eead4);
+    color: #fff;
+    font-weight: 800;
+    font-size: 22px;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+}
+
+
+  </style>
+
+
+  <style>
+    body {
+      /* background: #f8f8f8; */
+    }
+    .navbar {
+      background-color: #ffffff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    .credit-info {
+      font-weight: 500;
+      color: #555;
+      margin-right: 20px;
+    }
+    .user-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <!-- <header class="topbar">
+    <div class="logo">
+      <div class="mark">D</div>
+      <strong>D-TECH</strong>
+    </div>
+    <nav class="main-nav d-none d-md-block">
+      <a href="#">Home</a>
+      <a href="#">Jobs</a>
+      <a href="#">Shop Tech</a>
+      <a href="#">Services</a>
+      <a href="#">My Account</a>
+    </nav>
+    <span class="material-icons" style="color:var(--muted)">account_circle</span>
+  </header> -->
+
+ <!-- Header -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+  <div class="container-fluid">
+
+    <!-- Logo -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <div class="mark me-2 logo">D</div>
+      <strong>D-TECH</strong>
+    </a>
+
+    <!-- Mobile toggle button for offcanvas -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileMenu"
+      aria-controls="mobileMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Desktop Menu -->
+    <div class="collapse navbar-collapse justify-content-center d-none d-lg-flex" id="navbarMenu">
+      <ul class="navbar-nav mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Jobs</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Shop Tech</a></li>
+        <li class="nav-item"><a class="nav-link fw-semibold" href="#">Services</a></li>
+      </ul>
+    </div>
+
+    <!-- Credits & User -->
+    <div class="d-flex align-items-center ms-auto">
+      <div class="credit-info me-3 d-none d-lg-block">
+        Credits Used: <span class="text-primary">120</span> / 500
+      </div>
+
+      <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-decoration-none dropdown-toggle" id="userDropdown" data-bs-toggle="dropdown" aria-expanded="false">
+          <img src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt="User" class="user-icon me-2" style="width:35px;height:35px;border-radius:50%;">
+          <span class="fw-semibold">Dhiraj</span>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="userDropdown">
+          <li><a class="dropdown-item" href="#">👤 View Account</a></li>
+          <li><a class="dropdown-item" href="#">✏️ Edit Account</a></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><a class="dropdown-item" href="#">🔑 Login</a></li>
+          <li><a class="dropdown-item text-danger" href="#">🚪 Logout</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<!-- Offcanvas Mobile Menu -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="mobileMenu" aria-labelledby="mobileMenuLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title fw-bold" id="mobileMenuLabel">Menu</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav">
+      <li class="nav-item"><a class="nav-link fw-semibold" href="#">Home</a></li>
+      <li class="nav-item"><a class="nav-link fw-semibold" href="#">Jobs</a></li>
+      <li class="nav-item"><a class="nav-link fw-semibold" href="#">Shop Tech</a></li>
+      <li class="nav-item"><a class="nav-link fw-semibold" href="#">Services</a></li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="nav-link fw-semibold" href="#">👤 View Account</a></li>
+      <li><a class="nav-link fw-semibold" href="#">✏️ Edit Account</a></li>
+      <li><a class="nav-link fw-semibold text-danger" href="#">🚪 Logout</a></li>
+    </ul>
+  </div>
+</div>
+
+<style>
+  .navbar-nav .nav-link {
+    margin: 0 12px;
+    color: #333;
+  }
+  .navbar-nav .nav-link:hover {
+    color: #0d6efd;
+  }
+  .credit-info {
+    font-size: 0.9rem;
+  }
+</style>
+
+<!-- Header-->
+
+
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Unlock Your Potential.<br>Your All-One Hub for Career & Tech</h1>
+      <p>Tools, jobs, articles and tech gear — all in one place to help you build, learn and grow faster.</p>
+      <button class="btn-accent">Explore All Tools</button>
+    </div>
+    <div class="imgbox">
+      <img src="banner-removebg-preview.png" style="height:200px;" alt="illustration">
+    </div>
+  </section>
+
+  <!-- Quick Tools -->
+  <section>
+    <h3 class="fw-bold mb-4">Quick Access Tools</h3>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card-quick">
+          <img src="https://cdn-icons-png.flaticon.com/512/1384/1384060.png" alt="Video Downloader">
+          <div class="title">Video Downloader</div>
+          <p>Download from YouTube, Instagram, and more.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-quick">
+          <img src="https://cdn-icons-png.flaticon.com/512/4248/4248443.png" alt="Cron Scheduler">
+          <div class="title">Cron Scheduler</div>
+          <p>Manage and automate scheduled jobs easily.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-quick">
+          <img src="https://cdn-icons-png.flaticon.com/512/906/906334.png" alt="ATS Scanner">
+          <div class="title">ATS Resume Scanner</div>
+          <p>Optimize your resume to pass ATS filters.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+<!-- Document Conversion Tools Section -->
+<section class="py-5 bg-light" id="doc-tools">
+  <div class="container text-center">
+    <h2 class="mb-4 fw-bold">Document Conversion Tools</h2>
+    <p class="mb-5 text-muted">Convert your documents easily and securely using our smart online tools.</p>
+
+    <div class="row g-4">
+      <!-- PDF to Word -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/337/337946.png" 
+               class="card-img-top p-4 tool-img" alt="PDF to Word">
+          <div class="card-body">
+            <h5 class="card-title">PDF to Word</h5>
+            <p class="card-text text-muted small">Easily convert your PDF files to editable Word documents.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Word to PDF -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" 
+               class="card-img-top p-4 tool-img" alt="Word to PDF">
+          <div class="card-body">
+            <h5 class="card-title">Word to PDF</h5>
+            <p class="card-text text-muted small">Create PDF files from DOC or DOCX in seconds.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Image to PDF -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/337/337940.png" 
+               class="card-img-top p-4 tool-img" alt="Image to PDF">
+          <div class="card-body">
+            <h5 class="card-title">Image to PDF</h5>
+            <p class="card-text text-muted small">Combine JPG or PNG images into one neat PDF file.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PPT to PDF -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/888/888872.png" 
+               class="card-img-top p-4 tool-img" alt="PPT to PDF">
+          <div class="card-body">
+            <h5 class="card-title">PPT to PDF</h5>
+            <p class="card-text text-muted small">Turn your presentations into shareable PDFs instantly.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF to Excel -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/337/337948.png" 
+               class="card-img-top p-4 tool-img" alt="PDF to Excel">
+          <div class="card-body">
+            <h5 class="card-title">PDF to Excel</h5>
+            <p class="card-text text-muted small">Extract tables from PDF and save them as Excel sheets.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- PDF to Image -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/337/337949.png" 
+               class="card-img-top p-4 tool-img" alt="PDF to Image">
+          <div class="card-body">
+            <h5 class="card-title">PDF to Image</h5>
+            <p class="card-text text-muted small">Extract all images from a PDF file quickly.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Merge PDF -->
+      <div class="col-md-4 col-lg-3">
+        <div class="card h-100 shadow-sm border-0">
+          <img src="https://cdn-icons-png.flaticon.com/512/337/337951.png" 
+               class="card-img-top p-4 tool-img" alt="Merge PDF">
+          <div class="card-body">
+            <h5 class="card-title">Merge PDF</h5>
+            <p class="card-text text-muted small">Combine multiple PDF files into a single document.</p>
+            <a href="#" class="btn btn-primary btn-sm w-100">Convert</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .tool-img {
+    height: 100px; /* adjust height as needed */
+    object-fit: contain;
+  }
+</style>
+
+<!-- Explore More -->
+<section style="background:#ddd;" class="py-5">
+  <div class="container">
+    <h3 class="fw-bold mb-5 text-center">Explore More</h3>
+    <div class="row g-4">
+
+      <!-- Job Board -->
+      <div class="col-lg-5">
+        <div class="big-card p-4 shadow-sm rounded bg-white">
+          <h5 class="fw-bold mb-3">Job Board</h5>
+          <div class="input-group mb-3" style="max-width:100%;">
+            <input class="form-control" placeholder="Search Jobs">
+            <button class="btn btn-primary"><span class="material-icons">search</span></button>
+          </div>
+          <img src="https://images.unsplash.com/photo-1581091012184-9249d182a967?crop=entropy&cs=tinysrgb&fit=max&h=180&w=400" 
+               alt="jobs" class="img-fluid mt-3 rounded" style="width:100%;object-fit:cover;">
+        </div>
+      </div>
+
+      <!-- Shop Tech & Gear -->
+      <div class="col-lg-4">
+        <div class="tile shadow-sm rounded d-flex align-items-center justify-content-between p-3 bg-white" style="height:180px; transition:transform 0.3s;">
+          <div>
+            <div class="fw-bold">Shop Tech & Gear</div>
+            <div class="text-muted small mt-2">Browse quality tech accessories</div>
+          </div>
+          <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?crop=entropy&cs=tinysrgb&fit=max&h=100&w=100" 
+               alt="gear" style="width:100px;height:100px;border-radius:12px;object-fit:cover;">
+        </div>
+      </div>
+
+      <!-- Professional Services -->
+      <div class="col-lg-3">
+        <div class="tile text-white d-flex align-items-center justify-content-center shadow-sm rounded" 
+             style="height:180px;background:linear-gradient(180deg,#37d9cc,#19b3ff); transition: transform 0.3s;">
+          <div class="text-center">
+            <div class="fw-bold">Professional</div>
+            <small>View Services</small>
+            <div class="mt-2">
+              <img src="https://images.unsplash.com/photo-1581090700227-19d53aa7c80b?crop=entropy&cs=tinysrgb&fit=max&h=50&w=50" 
+                   alt="services" style="width:50px;height:50px;border-radius:50%;object-fit:cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .tile:hover, .big-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  }
+</style>
+
+
+<!-- Services & Business Listing -->
+<section class="py-5">
+  <div class="container">
+    <h3 class="fw-bold mb-5 text-center">Explore Services & Businesses</h3>
+
+    <!-- Categories -->
+    <div class="row g-4 mb-5">
+      <div class="col-md-3">
+        <div class="card shadow-sm rounded text-center p-3 category-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="IT Services" class="img-fluid mb-2" style="height:60px;object-fit:contain;">
+          <div class="fw-semibold">IT Services</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm rounded text-center p-3 category-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/565/565547.png" alt="Healthcare" class="img-fluid mb-2" style="height:60px;object-fit:contain;">
+          <div class="fw-semibold">Healthcare</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm rounded text-center p-3 category-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/2907/2907255.png" alt="Education" class="img-fluid mb-2" style="height:60px;object-fit:contain;">
+          <div class="fw-semibold">Education</div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card shadow-sm rounded text-center p-3 category-card">
+          <img src="https://cdn-icons-png.flaticon.com/512/3135/3135781.png" alt="Food & Beverages" class="img-fluid mb-2" style="height:60px;object-fit:contain;">
+          <div class="fw-semibold">Food & Beverages</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- List of Businesses -->
+    <!-- <div class="row g-4">
+      
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded h-100">
+          <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&h=180&w=400" class="card-img-top" alt="Business 1">
+          <div class="card-body">
+            <h5 class="card-title">Tech Solutions Pvt Ltd</h5>
+            <p class="card-text text-muted small">IT Services, Software Development, Web & Mobile Apps</p>
+            <a href="business-details.html" class="btn btn-primary btn-sm w-100">View Details</a>
+          </div>
+        </div>
+      </div>
+
+     
+      <div class="col-md-4">
+        <div class="card shadow-sm rounded h-100">
+          <img src="https://images.unsplash.com/photo-1573164574572-cb89e39749b4?crop=entropy&cs=tinysrgb&fit=max&h=180&w=400" class="card-img-top" alt="Business 2">
+          <div class="card-body">
+            <h5 class="card-title">Healthy Life Clinic</h5>
+            <p class="card-text text-muted small">Healthcare services, Diagnostics & Wellness</p>
+            <a href="business-details.html" class="btn btn-primary btn-sm w-100">View Details</a>
+          </div>
+        </div>
+      </div>
+
+    
+    </div> -->
+  </div>
+</section>
+
+<style>
+  .category-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    transition: all 0.3s;
+  }
+</style>
+
+
+<!-- Business Details Page -->
+<!-- <section class="py-5">
+  <div class="container">
+    <a href="business-list.html" class="btn btn-sm btn-light mb-4">← Back to Listings</a>
+    
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&h=400&w=600" class="img-fluid rounded" alt="Business Image">
+      </div>
+      <div class="col-lg-6">
+        <h3 class="fw-bold">Tech Solutions Pvt Ltd</h3>
+        <p class="text-muted">IT Services, Software Development, Web & Mobile Apps</p>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet facilisis urna. Praesent ultrices massa at felis cursus, vel tempor nulla tincidunt. Aenean vel orci ac nulla placerat vehicula.</p>
+        <ul class="list-group list-group-flush mb-3">
+          <li class="list-group-item"><strong>Category:</strong> IT Services</li>
+          <li class="list-group-item"><strong>Location:</strong> Delhi, India</li>
+          <li class="list-group-item"><strong>Contact:</strong> +91 9876543210</li>
+          <li class="list-group-item"><strong>Email:</strong> info@techsolutions.com</li>
+        </ul>
+        <a href="#" class="btn btn-primary">Contact Business</a>
+      </div>
+    </div>
+  </div>
+</section> -->
+
+
+
+
+
+
+
+  <!-- Blog -->
+  <!-- Technical & Coding Blog -->
+<section class="py-5" style="background:#f8f8f8;">
+  <div class="container">
+    <h3 class="fw-bold mb-5 text-center">Technical & Coding Blog</h3>
+    <div class="row g-4">
+
+      <!-- Blog 1 -->
+      <div class="col-md-4">
+        <div class="tile shadow-sm rounded bg-white p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1581091870623-6e094e3c16c6?crop=entropy&cs=tinysrgb&fit=max&h=180&w=400" 
+               alt="Python AI" class="img-fluid rounded mb-3" style="object-fit:cover; width:100%; height:180px;">
+          <div class="fw-bold">Ultimate Python for AI</div>
+          <p class="text-muted small mt-2">Guide for developers to master AI frameworks.</p>
+        </div>
+      </div>
+
+      <!-- Blog 2 -->
+      <div class="col-md-4">
+        <div class="tile shadow-sm rounded bg-white p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1581276879432-15c58b7b91a0?crop=entropy&cs=tinysrgb&fit=max&h=180&w=400" 
+               alt="UI UX" class="img-fluid rounded mb-3" style="object-fit:cover; width:100%; height:180px;">
+          <div class="fw-bold">Latest UI/UX Design Trends</div>
+          <p class="text-muted small mt-2">Modern principles for better experiences.</p>
+        </div>
+      </div>
+
+      <!-- Blog 3 -->
+      <div class="col-md-4">
+        <div class="tile shadow-sm rounded bg-white p-3 h-100">
+          <img src="https://images.unsplash.com/photo-1581092339041-7f65c82c92ff?crop=entropy&cs=tinysrgb&fit=max&h=180&w=400" 
+               alt="FastAPI Deployment" class="img-fluid rounded mb-3" style="object-fit:cover; width:100%; height:180px;">
+          <div class="fw-bold">FastAPI Deployment Guide</div>
+          <p class="text-muted small mt-2">Step-by-step example using Python.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  .tile:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+  }
+</style>
+
+
+  <footer>
+    <div class="d-flex justify-content-between flex-wrap">
+      <div>© <strong>R-TECH</strong> · Terms · Contact</div>
+      <div>Made with ♥ — Placeholder demo</div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

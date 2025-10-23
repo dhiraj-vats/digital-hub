@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Business Details - Tech Solutions</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    .hero {
+      position: relative;
+      height: 350px;
+      overflow: hidden;
+    }
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-overlay {
+      position: absolute;
+      top: 0; left:0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+    }
+    .hero-text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+    }
+    .badge-category {
+      font-size: 12px;
+      margin-right: 5px;
+    }
+    .sidebar {
+      position: sticky;
+      top: 20px;
+    }
+    .gallery img {
+      border-radius: 5px;
+      width: 100%;
+      object-fit: cover;
+    }
+    .review {
+      border-bottom: 1px solid #e0e0e0;
+      padding: 10px 0;
+    }
+    .contact-info i {
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+    .catalogue a {
+      display: block;
+      margin-bottom: 5px;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero / Banner -->
+<section class="hero mb-4">
+  <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?crop=entropy&cs=tinysrgb&fit=max&w=1200" alt="Business Cover">
+  <div class="hero-overlay"></div>
+  <div class="hero-text">
+    <h1 class="fw-bold">Tech Solutions Pvt Ltd</h1>
+    <span class="badge bg-success mt-2">✔ Zono Verified</span>
+  </div>
+</section>
+
+<!-- Main Content -->
+<div class="container mb-5">
+  <div class="row g-4">
+    <!-- Left Column: Main Details -->
+    <div class="col-md-8">
+
+      <!-- Overview / Description -->
+      <div class="mb-4">
+        <h4>Overview</h4>
+        <p>Tech Solutions Pvt Ltd is a full-stack web development and software company offering cloud solutions, mobile apps, and enterprise software. We provide reliable and scalable technology services tailored to your business needs.</p>
+      </div>
+
+      <!-- Categories / Services -->
+      <div class="mb-4">
+        <h5>Services / Categories</h5>
+        <span class="badge bg-secondary badge-category">Web Development</span>
+        <span class="badge bg-secondary badge-category">Software Solutions</span>
+        <span class="badge bg-secondary badge-category">Mobile Apps</span>
+        <span class="badge bg-secondary badge-category">Cloud Services</span>
+      </div>
+
+      <!-- Gallery / Photos -->
+      <div class="mb-4">
+        <h5>Gallery / Photos</h5>
+        <div class="row g-2 gallery">
+          <div class="col-4"><img src="https://images.unsplash.com/photo-1581091870622-2d1d8f5cb67b?crop=entropy&cs=tinysrgb&fit=max&w=400" alt="Portfolio"></div>
+          <div class="col-4"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?crop=entropy&cs=tinysrgb&fit=max&w=400" alt="Portfolio"></div>
+          <div class="col-4"><img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?crop=entropy&cs=tinysrgb&fit=max&w=400" alt="Portfolio"></div>
+        </div>
+      </div>
+
+      <!-- Catalogue -->
+      <div class="mb-4">
+        <h5>Catalogue / Downloads</h5>
+        <div class="catalogue">
+          <a href="#" class="text-decoration-none"><i class="material-icons">file_download</i> Product Catalogue 2025.pdf</a>
+          <a href="#" class="text-decoration-none"><i class="material-icons">file_download</i> Service Brochure.pdf</a>
+        </div>
+      </div>
+
+      <!-- Reviews -->
+      <div class="mb-4">
+        <h5>Reviews</h5>
+
+        <!-- Existing Reviews -->
+        <div class="review">
+          <strong>John Doe</strong> ⭐⭐⭐⭐  
+          <p>Great service, very responsive and professional.</p>
+        </div>
+        <div class="review">
+          <strong>Jane Smith</strong> ⭐⭐⭐⭐⭐  
+          <p>Highly recommend for software development projects.</p>
+        </div>
+
+        <!-- Add Review Form -->
+        <div class="mt-3 p-3 border rounded" style="background-color:#f8f9fa;">
+          <h6>Add Your Review</h6>
+          <form>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="mb-2">
+              <select class="form-select">
+                <option value="">Rating</option>
+                <option>⭐</option>
+                <option>⭐⭐</option>
+                <option>⭐⭐⭐</option>
+                <option>⭐⭐⭐⭐</option>
+                <option>⭐⭐⭐⭐⭐</option>
+              </select>
+            </div>
+            <div class="mb-2">
+              <textarea class="form-control" rows="2" placeholder="Your review"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm">Submit Review</button>
+          </form>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Sidebar Contact Info -->
+    <div class="col-md-4">
+      <div class="sidebar">
+        <h5>Contact Information</h5>
+        <div class="contact-info mb-3">
+          <div><i class="material-icons">call</i> +91 12345 67890</div>
+          <div><i class="material-icons">email</i> info@techsolutions.com</div>
+          <div><i class="material-icons">location_on</i> Kailash Puram, Govindpuram</div>
+          <div><i class="material-icons">schedule</i> Mon - Sat: 9 AM - 6 PM</div>
+          <div><i class="material-icons">check_circle</i> Open Now</div>
+        </div>
+
+        <!-- Optional Contact Form -->
+        <div class="p-3 border rounded" style="background-color:#f8f9fa;">
+          <h6>Request Information</h6>
+          <form>
+            <div class="mb-2">
+              <input type="text" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="mb-2">
+              <input type="tel" class="form-control" placeholder="Phone Number">
+            </div>
+            <div class="mb-2">
+              <textarea class="form-control" rows="2" placeholder="Message"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary w-100 btn-sm">Submit</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
